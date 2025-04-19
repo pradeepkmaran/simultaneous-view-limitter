@@ -12,18 +12,18 @@ import org.springframework.web.bind.annotation.*;
 public class NotificationController {
     private final ConnectService connectService;
 
-    public NotificationService(ConnectService connectService) {
+    public NotificationController(ConnectService connectService) {
         this.connectService = connectService;
     }
 
-    @GetMapping("/")
+    @RequestMapping("/")
     public String index () {
         return "index";
     }
 
-    @GetMapping("/notifications")
+    @RequestMapping("/notifications")
     public String notification () {
-        return "notification";
+        return "notifications";
     }
 
     @PostMapping("/send")

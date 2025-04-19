@@ -34,7 +34,7 @@ public class ConnectService {
 
     public void forceConnect (ExistDto.Request request) {
         // push alert to exist user
-        notificationService.notifyDisconnect(new ExistDto.Response(request.getNewUser(), request.getExistUser));
+        notificationService.notifyDisconnect(new ExistDto.Response(request.getNewUser(), request.getExistUser()));
 
         // update watch info in redis
         messageSender.sendMessage(forceTopic, request.getWatchInfo());
